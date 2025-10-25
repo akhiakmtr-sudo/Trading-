@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 const images = [
-  'https://i.postimg.cc/wvSmxPWR/Black-and-Green-Bold-Trading-You-Tube-Thumbnail-20251023-235018-0000.png',
+  'https://i.postimg.cc/kX2H7KRS/Black-and-Yellow-Modern-Trading-Training-Session-You-Tube-Thumbnail-20251023-164832-0000.png',
   'https://i.postimg.cc/3RPvr6LN/Black-and-Green-Bold-Trading-You-Tube-Thumbnail-20251023-235120-0000.png',
   'https://i.postimg.cc/zB9gDMdT/Black-and-Green-Bold-Trading-You-Tube-Thumbnail-20251023-235314-0000.png',
   'https://i.postimg.cc/0QLw53tf/Black-and-Green-Bold-Trading-You-Tube-Thumbnail-20251023-235911-0000.png',
@@ -10,7 +10,7 @@ const images = [
 // This is the duration for the slide animation itself
 const SLIDE_TRANSITION_DURATION_MS = 500;
 // This is the time an image stays on screen
-const TIME_PER_SLIDE_MS = 5000;
+const TIME_PER_SLIDE_MS = 7000;
 
 const Home: React.FC = () => {
   // We add a clone of the first image at the end of the array to create a seamless loop.
