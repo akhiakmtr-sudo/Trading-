@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 
 const Logo: React.FC = () => (
@@ -10,13 +9,24 @@ const Logo: React.FC = () => (
   </a>
 );
 
+const NavLink: React.FC<{ href: string; children: React.ReactNode; onClick?: () => void }> = ({ href, children, onClick }) => (
+  <a
+    href={href}
+    onClick={onClick}
+    className="px-4 py-2 hover:text-blue-600 transition-colors duration-300 relative group"
+  >
+    {children}
+    <span className="absolute bottom-0 left-0 w-full h-0.5 bg-blue-600 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out origin-center"></span>
+  </a>
+);
+
 const NavLinks: React.FC<{ className?: string, onLinkClick?: () => void }> = ({ className, onLinkClick }) => (
   <nav className={className}>
-    <a href="#home" onClick={onLinkClick} className="px-4 py-2 hover:text-blue-600 transition-colors duration-300">Home</a>
-    <a href="#about" onClick={onLinkClick} className="px-4 py-2 hover:text-blue-600 transition-colors duration-300">About Us</a>
-    <a href="#services" onClick={onLinkClick} className="px-4 py-2 hover:text-blue-600 transition-colors duration-300">Services</a>
-    <a href="#activities" onClick={onLinkClick} className="px-4 py-2 hover:text-blue-600 transition-colors duration-300">Activities</a>
-    <a href="#contact" onClick={onLinkClick} className="px-4 py-2 hover:text-blue-600 transition-colors duration-300">Contact Us</a>
+    <NavLink href="#home" onClick={onLinkClick}>Home</NavLink>
+    <NavLink href="#about" onClick={onLinkClick}>About Us</NavLink>
+    <NavLink href="#services" onClick={onLinkClick}>Services</NavLink>
+    <NavLink href="#activities" onClick={onLinkClick}>Activities</NavLink>
+    <NavLink href="#contact" onClick={onLinkClick}>Contact Us</NavLink>
   </nav>
 );
 
@@ -50,11 +60,9 @@ const Header: React.FC = () => {
           </button>
         </div>
       </div>
-      {isOpen && (
-        <div className="md:hidden bg-white shadow-lg">
-          <NavLinks className="flex flex-col items-center py-4 space-y-2 text-lg" onLinkClick={closeMenu} />
-        </div>
-      )}
+      <div className={`md:hidden bg-white shadow-lg overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? 'max-h-96' : 'max-h-0'}`}>
+        <NavLinks className="flex flex-col items-center py-4 space-y-2 text-lg" onLinkClick={closeMenu} />
+      </div>
     </header>
   );
 };
