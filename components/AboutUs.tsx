@@ -50,7 +50,7 @@ const AboutUs: React.FC = () => {
             STUDY | TRADE | INVEST
           </p>
 
-          <div className="max-w-4xl mx-auto text-center text-lg text-gray-600 space-y-6 mb-20">
+          <div className="max-w-4xl mx-auto text-justify text-lg text-gray-600 space-y-6 mb-20">
             <p className="leading-relaxed">
               Welcome to Trader’s Net Café, a one-of-a-kind space where learning, trading, and networking come together in a modern café environment. We’re redefining how people experience trading — not behind closed doors, but in an open, inspiring atmosphere designed for thinkers, learners, and doers.
             </p>
