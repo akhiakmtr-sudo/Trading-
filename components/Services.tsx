@@ -78,7 +78,7 @@ const Services: React.FC = () => {
       <div className="container mx-auto px-6">
         <FadeInSection>
           <h2 className="text-4xl font-bold text-center mb-12 text-gray-800">Our Services</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
+          <div className="grid grid-cols-2 lg:grid-cols-5 gap-8">
             {serviceData.map((service, index) => (
               <ServiceCard key={index} imageUrl={service.imageUrl} title={service.title} description={service.description} />
             ))}
